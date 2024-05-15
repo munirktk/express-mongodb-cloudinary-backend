@@ -2,8 +2,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { validateEmail } from "../utils/validation.js";
 import {User} from "../models/user.model.js"
-import { uploadOnCloudinary } from "../utils/cloudinary.js"; 
-import { use } from "react";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";  
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const registerUser = asyncHandler(async (req, res) => {
@@ -57,13 +56,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
  return res.status(201).json(
   new ApiResponse(200,createdUser,"User registered successfully")
- );
-  // Proceed with registration process
-  // For example, save user data to the database
-
-  res.status(200).json({
-    message: "User registered successfully",
-  });
+ ); 
 });
 
 export { registerUser };
